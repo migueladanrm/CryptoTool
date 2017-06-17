@@ -16,6 +16,8 @@ namespace migueladanrm.CryptoTool
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
+
+            new UI.Dashboard().Show();
         }
     }
 }
