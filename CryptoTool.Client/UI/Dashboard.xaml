@@ -7,6 +7,81 @@
         mc:Ignorable="d"
         Title="CryptoTool" Height="450" Width="700" UseLayoutRounding="True" WindowStartupLocation="CenterScreen">
     <Grid x:Name="layoutRoot">
+        <Grid x:Name="layoutPrimary">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
 
+            <Grid Margin="10,10,10,0" Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Clave:" Grid.Column="0"/>
+                    <TextBox x:Name="tbxEncryptionKey" Grid.Column="1"/>
+                </Grid>
+
+                <StackPanel Grid.Column="1" Orientation="Horizontal">
+                    <Label Content="Modo:"/>
+                    <ComboBox x:Name="cbxMode" SelectedIndex="0" Width="110">
+                        <ComboBox.Items>
+                            <ComboBoxItem Content="Encriptar"/>
+                            <ComboBoxItem Content="Desencriptar"/>
+                        </ComboBox.Items>
+                    </ComboBox>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Label Content="ENTRADA" FontFamily="Segoe UI Semibold" HorizontalAlignment="Center" Padding="0" Margin="0,5,0,0"/>
+                        <TextBox x:Name="tbxInput" Grid.Row="1" Margin="5" AcceptsReturn="True" FontFamily="Consolas" Padding="3" TextChanged="tbxInput_TextChanged" TextWrapping="Wrap"/>
+                    </Grid>
+
+                </Grid>
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Label Content="SALIDA" FontFamily="Segoe UI Semibold" HorizontalAlignment="Center" Padding="0" Margin="0,5,0,0"/>
+                        <TextBox x:Name="tbxOutput" Grid.Row="1" Margin="5" AcceptsReturn="True" FontFamily="Consolas" Padding="3" IsReadOnly="True" TextWrapping="Wrap"/>
+                    </Grid>
+
+                </Grid>
+
+            </Grid>
+        </Grid>
+        <Grid x:Name="layoutSecondary" Visibility="Collapsed">
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.3"/>
+            </Grid.Background>
+        </Grid>
     </Grid>
 </Window>

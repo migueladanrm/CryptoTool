@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static System.Console;
 
 namespace migueladanrm.CryptoTool.UI
 {
@@ -22,6 +23,11 @@ namespace migueladanrm.CryptoTool.UI
         public Dashboard()
         {
             InitializeComponent();
+        }
+
+        private void tbxInput_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            tbxOutput.Text = cbxMode.SelectedIndex == 0 ? Encryption.Encrypt(tbxInput.Text, tbxEncryptionKey.Text) : Encryption.Decrypt(tbxInput.Text, tbxEncryptionKey.Text);
         }
     }
 }
